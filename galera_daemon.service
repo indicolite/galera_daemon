@@ -1,0 +1,45 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          python galera single node monitor
+# Required-Start:    $syslog
+# Required-Stop:     $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Runs python galera single node monitor.
+# Description:       Runs python daemon.
+### END INIT INFO
+DESC="Python Mysql monitoring daemon ${NAME}"
+NAME="galera_deamon"
+. /lib/lsb/init-functions
+
+runPath="/xxx/xxx/galera_daemon.py"
+
+case "$1" in
+'start')
+        log_daemon_msg "Starting $DESC" "$NAME"
+        $runPath start
+        case "$?" in
+                0) log_end_msg 0 ;;
+                1) log_end_msg 1 ;;
+        esac
+;;
+'stop')
+        log_daemon_msg "Starting $DESC" "$NAME"
+        $runPath stop 
+        case "$?" in
+                0) log_end_msg 0 ;;
+                1) log_end_msg 1 ;;
+        esac
+;;
+
+'restart')
+  	$0 stop
+  	$0 start
+;;
+
+*)
+        echo "Usage: $0 {status|start|stop|restart}"
+        exit 1
+esac
+
+exit 0

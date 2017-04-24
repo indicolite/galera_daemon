@@ -1,0 +1,15 @@
+mysql:
+  host:
+  port:
+  user:
+  pass:
+daemon:
+  pid:
+  critical_log:
+  def_tty:
+  host:
+  port:
+logger:
+  location:
+  name:
+  rotation_time:
