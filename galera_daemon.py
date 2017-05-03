@@ -334,7 +334,7 @@ class ServerRun(object):
                 result = cursor.fetchone()
                 if result[1] == 'ON':
                     available_count += 1
-                    self.__logger.info("available counts now + 1 = %d", available_count )
+                    self.__logger.info("available counts now + 1 = %d", available_count)
                 else:
                     self.__logger.info("available counts still with %d", available_count)
             except BaseException:
@@ -349,7 +349,7 @@ class ServerRun(object):
 
             #if result[1] == 'ON':
             #    available_count += 1
-            #    self.__logger.info("available counts now + 1 = %d", available_count )
+            #    self.__logger.info("available counts now + 1 = %d", available_count)
             #else:
             #    self.__logger.info("available counts still with %d", available_count)
 
@@ -423,7 +423,7 @@ class ServerRun(object):
 
         if cluster_result[1] == local_result[1]:
             answer = 'ok'
-            self.__logger.info(" %s %s   sync check", cluster_result[1], local_result[1])
+            self.__logger.info(" %s %s sync check", cluster_result[1], local_result[1])
             return True
         else:
             answer = 'status_err'+self.__sync_check.__name__
