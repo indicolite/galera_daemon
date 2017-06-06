@@ -422,11 +422,7 @@ class ServerRun(object):
         self.__connection.close()
 
         if cluster_result[1] == local_result[1]:
-<<<<<<< HEAD
             #answer = 'ok'
-=======
-            answer = 'ok'
->>>>>>> 534fa1bb9d081562531db119d6b2c1254b17b97d
             self.__logger.info(" %s %s sync check", cluster_result[1], local_result[1])
             return True
         else:
